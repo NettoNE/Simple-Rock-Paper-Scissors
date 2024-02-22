@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+code,
+em,
+small,
+strong,
+sub,
+sup {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+a {
+	color: inherit;
+}
+
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+img,
+embed,
+object,
+iframe,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr {
+	margin: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+
+strong,
+b {
+	font-weight: bold;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+}
+
+pre,
+code {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* Ajusta o layout padrão para elementos de formulário */
+button,
+input,
+select,
+textarea {
+	margin: 0;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+input {
+	-ms-overflow-style: none;
+	text-align: left;
+}
+
+button,
+input,
+select,
+textarea {
+	outline: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+}

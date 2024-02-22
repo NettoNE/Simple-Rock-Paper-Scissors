@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.flex-center {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.winner-msg {
+    margin-bottom: auto;
+    margin-top: 20px;
+    color: #5e6061;
+    font-size: 20px;
+}
+
+.btn-menu {
+    gap: 50px;
+}
+
+.btn {
+    background-color: #e9e9ed;
+    padding: 50px;
+    border: 2px solid #CCCCCC;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    max-height: 100px;
+    width: 100px;
+    font-size: 36px;
+}
+
+.btn:hover {
+    background-color: #b5b5fa;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+.counters {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #5e6061;
+}
+
+.dark-grey {
+    background-color: #F0F0F0;
+}
+
+.baby-blue {
+    background-color: #D0E8F2;
+}
+
+.anta-regular {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 720px) {
+    .btn-menu {
+        margin: 20px;
+    }
+    .flex-center {
+        flex-direction: column;
+    }   
+}
