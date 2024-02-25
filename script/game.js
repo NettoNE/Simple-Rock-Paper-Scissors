@@ -9,6 +9,7 @@ let machineCounter = document.querySelector("#machineCounter");
 let stalemateCounter = document.querySelector("#stalemateCounter");
 let roundCounter = document.querySelector("#roundCounter");
 let winnerMsg = document.querySelector("#winnerMsg");
+let gameLog = document.querySelector("#gameLog");
 
 // code counters
 let user = 0;
@@ -45,7 +46,8 @@ function getMachineChoice() {
 
 function game() {
 	getMachineChoice();
-
+	optionPlayed(); 
+	
 	if (userChoice === machineChoice) {
 		stalemateTreatment();
 	} else if (
@@ -89,6 +91,10 @@ function winnerTreatment(winner) {
 	}
 	winnerMsg.firstElementChild.innerHTML = message;
 	roundCounterTreatment();
+}
+
+function optionPlayed() {
+	gameLog.firstElementChild.innerHTML = `You: ${userChoice} | Machine: ${machineChoice}`;
 }
 
 function userCounterTreatment() {

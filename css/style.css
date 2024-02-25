@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
 body {
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* containers */
+
+.flex-general {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
 }
 
 .flex-center {
@@ -15,6 +18,8 @@ body {
     align-items: center;
 }
 
+/* logs */
+
 .winner-msg {
     margin-bottom: auto;
     margin-top: 20px;
@@ -22,9 +27,33 @@ body {
     font-size: 20px;
 }
 
+.game-log {
+   color: #5e6061;
+}
+
+/* game options */
+
 .btn-menu {
+    flex: 1;
     gap: 50px;
 }
+
+/* counters */
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+.counters {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #5e6061;
+}
+
+/* generic styles and font */
 
 .btn {
     background-color: #e9e9ed;
@@ -41,24 +70,11 @@ body {
     background-color: #b5b5fa;
 }
 
-footer {
-    margin-top: auto;
-    width: 100%;
-}
-
-.counters {
-    margin: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    color: #5e6061;
-}
-
 .dark-grey {
     background-color: #F0F0F0;
 }
 
-.baby-blue {
+.light-blue {
     background-color: #D0E8F2;
 }
 
