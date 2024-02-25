@@ -10,39 +10,31 @@
 </head>
 
 <body class="flex-general dark-grey anta-regular">
-    <div class="flex-center winner-msg" id="winnerMsg">
-        <p>Simple RPS | by NettoNE</p>
-    </div>
-    <div class="flex-center game-log" id="gameLog">
-        <p>Check my Github!</p>
-    </div>
-        <div class="flex-center btn-menu">
-            <div class="flex-center" id="rock">
-                <button class="flex-center btn">🪨</button>
-            </div>
-            <div class="flex-center" id="paper">
-                <button class="flex-center btn">📃</button>
-            </div>
-            <div class="flex-center" id="scissors">
-                <button class="flex-center btn">✂️</button>
-            </div>
+    <div class="flex-center winner-log" id="winnerLog"></div>
+    <div class="flex-center game-log" id="gameLog"></div>
+    <div class="flex-center btn-menu">
+        <div class="flex-center" id="rock">
+            <button class="flex-center btn">🪨</button>
         </div>
+        <div class="flex-center" id="paper">
+            <button class="flex-center btn">📃</button>
+        </div>
+        <div class="flex-center" id="scissors">
+            <button class="flex-center btn">✂️</button>
+        </div>
+    </div>
     <footer class="flex-center light-blue">
         <div class="counters" id="userCounter">
             <p>PLAYER</p>
-            <p>0</p>
         </div>
         <div class="counters" id="machineCounter">
             <p>MACHINE</p>
-            <p>0</p>
         </div>
         <div class="counters" id="stalemateCounter">
             <p>STALEMATE</p>
-            <p>0</p>
         </div>
         <div class="counters" id="roundCounter">
             <p>ROUND</p>
-            <p>0</p>
         </div>
     </footer>
     <script src="script/game.js"></script>

@@ -3,13 +3,31 @@ let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
 
-// get HTML counters
-let userCounter = document.querySelector("#userCounter");
-let machineCounter = document.querySelector("#machineCounter");
-let stalemateCounter = document.querySelector("#stalemateCounter");
-let roundCounter = document.querySelector("#roundCounter");
-let winnerMsg = document.querySelector("#winnerMsg");
-let gameLog = document.querySelector("#gameLog");
+// create game counters
+let userParagraphCounter = document.createElement("p");
+userParagraphCounter.textContent = "0";
+userCounter.appendChild(userParagraphCounter);
+
+let machineParagraphCounter = document.createElement("p");
+machineParagraphCounter.textContent = "0";
+machineCounter.appendChild(machineParagraphCounter);
+
+let stalemateParagraphCounter = document.createElement("p");
+stalemateParagraphCounter.textContent = "0";
+stalemateCounter.appendChild(stalemateParagraphCounter);
+
+let roundParagraphCounter = document.createElement("p");
+roundParagraphCounter.textContent = "0";
+roundCounter.appendChild(roundParagraphCounter);
+
+// create game logs
+let winnnerParagraphLog = document.createElement("p");
+winnnerParagraphLog.textContent = "Simple RPS";
+winnerLog.appendChild(winnnerParagraphLog);
+
+let gameParagraphLog = document.createElement("p");
+gameParagraphLog.textContent = "by NettoNE";
+gameLog.appendChild(gameParagraphLog);
 
 // code counters
 let user = 0;
@@ -22,17 +40,17 @@ let machineChoice;
 
 function getUserChoice() {
 
-	rock.addEventListener('click', function() {
+	rock.addEventListener('click', function () {
 		userChoice = 'rock';
 		game();
 	});
 
-	paper.addEventListener('click', function() {
+	paper.addEventListener('click', function () {
 		userChoice = 'paper';
 		game();
 	});
 
-	scissors.addEventListener('click', function() {
+	scissors.addEventListener('click', function () {
 		userChoice = 'scissors';
 		game();
 	});
@@ -46,8 +64,10 @@ function getMachineChoice() {
 
 function game() {
 	getMachineChoice();
-	optionPlayed(); 
-	
+
+	// write in the interface what the machine and the user played 
+	optionPlayed();
+
 	if (userChoice === machineChoice) {
 		stalemateTreatment();
 	} else if (
@@ -62,54 +82,71 @@ function game() {
 }
 
 function stalemateTreatment() {
+
 	let message = "STALEMATE!";
-	if (winnerMsg.firstElementChild.innerHTML === message) {
+	if (winnerLog.firstElementChild.textContent === message) {
 		message += " AGAIN...";
-		winnerMsg.firstElementChild.innerHTML = message; 
+		winnerLog.firstElementChild.textContent = message;
 	} else {
-		winnerMsg.firstElementChild.innerHTML = message;
+		winnerLog.firstElementChild.textContent = message;
 	}
-	stalemate++;
-	stalemateCounter.lastElementChild.innerHTML = stalemate;
+
+	// increase stalemate counter
+	stalemateCounterTreatment();
+	
+	// increase round counter
 	roundCounterTreatment();
 }
 
 function winnerTreatment(winner) {
 	let message;
+
 	if (winner === "user") {
 		message = "You won!";
-		if (winnerMsg.firstElementChild.innerHTML === message) {
+		if (winnerLog.firstElementChild.textContent === message) {
 			message += " Again...";
 		}
+		// increase user winning counter
 		userCounterTreatment();
 	} else {
 		message = "The machine won!";
-		if (winnerMsg.firstElementChild.innerHTML === message) {
+		if (winnerLog.firstElementChild.textContent === message) {
 			message += " Again...";
 		}
+		// increase machine winning counter
 		machineCounterTreatment();
 	}
-	winnerMsg.firstElementChild.innerHTML = message;
+
+	// write on the interface who won 
+	winnerLog.firstElementChild.textContent = message;
+
+	// increase round counter
 	roundCounterTreatment();
 }
 
 function optionPlayed() {
-	gameLog.firstElementChild.innerHTML = `You: ${userChoice} | Machine: ${machineChoice}`;
+	gameLog.firstElementChild.textContent =
+		`You: ${userChoice} | Machine: ${machineChoice}`;
+}
+
+function stalemateCounterTreatment() {
+	stalemate++;
+	stalemateCounter.lastElementChild.textContent = stalemate;
 }
 
 function userCounterTreatment() {
 	user++;
-	userCounter.lastElementChild.innerHTML = user;
+	userCounter.lastElementChild.textContent = user;
 }
 
 function machineCounterTreatment() {
 	machine++;
-	machineCounter.lastElementChild.innerHTML = machine;
+	machineCounter.lastElementChild.textContent = machine;
 }
 
 function roundCounterTreatment() {
 	round++;
-	roundCounter.lastElementChild.innerHTML = round;
+	roundCounter.lastElementChild.textContent = round;
 }
 
 window.onload = getUserChoice;
