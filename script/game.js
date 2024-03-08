@@ -1,3 +1,13 @@
+// define game rounds
+const gameRounds = prompt("What is the number of matches? If you want to play freely, click 'cancel'");
+
+// restart feature stuff
+let newGameButton = document.querySelector('.new-game');
+let footerElement = document.querySelector('footer');
+let buttons = document.querySelectorAll(".btn");
+
+let globalWinner;
+
 // get options
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
@@ -28,6 +38,7 @@ winnerLog.appendChild(winnnerParagraphLog);
 let gameParagraphLog = document.createElement("p");
 gameParagraphLog.textContent = "by NettoNE";
 gameLog.appendChild(gameParagraphLog);
+
 
 // code counters
 let user = 0;
@@ -93,7 +104,7 @@ function stalemateTreatment() {
 
 	// increase stalemate counter
 	stalemateCounterTreatment();
-	
+
 	// increase round counter
 	roundCounterTreatment();
 }
@@ -145,8 +156,49 @@ function machineCounterTreatment() {
 }
 
 function roundCounterTreatment() {
+	
+	// check if all games have been played
+	endGame();
+	
 	round++;
 	roundCounter.lastElementChild.textContent = round;
+}
+
+function endGame() {
+	let i;
+	if (round == gameRounds) {
+
+		// assigns variable globalWinner to be used later in a message
+		globalWinnerTreatment();
+
+		footerElement.classList.add("disable");
+
+		for (let i = 0; i < buttons.length; i++) {
+			buttons[i].classList.add("disable");
+		}
+
+		newGameButton.classList.add('enable')
+
+		alert(`You played ${round} games! ${globalWinner}`);
+	}
+}
+
+function globalWinnerTreatment() {
+
+	if (user == machine) {
+		globalWinner = "It was a draw!";
+	} else {
+		if (user > machine) {
+			globalWinner = "The winner was the player";
+		} else {
+			globalWinner = "The winner was the machine";
+		}
+	}
+}
+
+// restart the game
+function restartGame() {
+	location.reload();
 }
 
 window.onload = getUserChoice;
