@@ -3,6 +3,36 @@
 body {
     min-height: 100vh;
     margin: 0 auto;
+    align-items: center;
+}
+
+/* new-game */
+
+.new-game{
+    margin-top: 32vh;
+    display: none !important;
+}
+
+.new-game button {
+    color: #5e6061;
+    font-size: 1rem;
+    padding: 20px;
+    border: 2px solid #CCCCCC;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #e9e9ed;
+}
+
+.new-game button:hover {
+    background-color: #b5b5fa;
+}
+
+.enable {
+    display: block !important;
+}
+
+.disable {
+    display: none !important;
 }
 
 /* containers */
@@ -92,4 +122,7 @@ footer {
     .flex-center {
         flex-direction: column;
     }   
+    .new-game{
+        margin-top: 25vh;
+    }
 }
